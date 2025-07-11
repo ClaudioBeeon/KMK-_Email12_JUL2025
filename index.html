@@ -14,12 +14,19 @@
     .ExternalClass { width: 100%; }
     .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
     #outlook a { padding: 0; }
-    .appleLinks a { color:#000000; text-decoration: none; }
+    .appleLinks a { color:#000000 !important; text-decoration: none; }
+    
+    .text-white {
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      mso-color-alt: #ffffff;
+    }
 
-    @media only screen and (max-width: 480px) {
-      table[class="main-table"] { width: 100% !important; }
-      img[class="full-width-image"] { width: 100% !important; height: auto !important; }
-      .force-white-text { color: #ffffff !important; }
+    @media screen and (max-width: 480px) {
+      .force-white {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+      }
     }
   </style>
 </head>
@@ -30,20 +37,19 @@
         <table border="0" cellpadding="0" cellspacing="0" width="600" class="main-table">
           <tr>
             <td align="center" valign="top">
-              <!-- Imagem topo -->
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td align="center" valign="top" style="font-size: 0; line-height: 0;">
-                    <img src="https://i.imgur.com/qlKYrXE.png" width="600" height="820" alt="Kimika - Moda Feminina, Novidades e Estilo" style="display: block; max-width: 600px;" class="full-width-image">
+                    <img src="https://i.imgur.com/qlKYrXE.png" width="600" height="820" alt="Kimika" style="display: block; max-width: 600px;" class="full-width-image">
                   </td>
                 </tr>
                 <tr>
                   <td align="center" valign="top" style="font-size: 0; line-height: 0;">
-                    <img src="https://i.imgur.com/Qaf4y1H.png" width="600" height="80" alt="Descubra as últimas tendências na Kimika" style="display: block; max-width: 600px;" class="full-width-image">
+                    <img src="https://i.imgur.com/Qaf4y1H.png" width="600" height="80" alt="Kimika" style="display: block; max-width: 600px;" class="full-width-image">
                   </td>
                 </tr>
 
-                <!-- BLOCO COM IMAGEM DE FUNDO E TEXTO CENTRALIZADO -->
+                <!-- BLOCO DO CUPOM - VERSÃO FINAL QUE FUNCIONA NO GMAIL/iPHONE -->
                 <tr>
                   <td align="center" valign="middle" background="https://i.imgur.com/ptqSy7i.png" bgcolor="#ffffff" width="600" height="52" style="background-image: url('https://i.imgur.com/ptqSy7i.png'); background-size: cover; background-position: center; text-align: center;">
                     <!--[if gte mso 9]>
@@ -51,9 +57,16 @@
                       <v:fill type="frame" src="https://i.imgur.com/ptqSy7i.png" color="#ffffff" />
                       <v:textbox inset="0,0,0,0">
                     <![endif]-->
-                      <div style="font-family: 'Montserrat', Arial, sans-serif; font-size: 18px; font-weight: 600; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; line-height: 52px;" class="force-white-text">
+                    <div>
+                      <!-- TEXTO VISÍVEL -->
+                      <span style="font-family: 'Montserrat', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 52px; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; mso-color-alt: #ffffff; display: inline !important;" class="text-white force-white">
                         CUPOM:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEUANIVERSARIO
-                      </div>
+                      </span>
+                      <!-- TEXTO FALLBACK PARA O GMAIL -->
+                      <span style="color: transparent; font-size: 0; display: none !important; max-height: 0; overflow: hidden;">
+                        &nbsp;
+                      </span>
+                    </div>
                     <!--[if gte mso 9]>
                       </v:textbox>
                     </v:rect>
@@ -61,11 +74,10 @@
                   </td>
                 </tr>
 
-                <!-- Botão/link -->
                 <tr>
                   <td align="center" valign="top" style="font-size: 0; line-height: 0;">
                     <a href="http://kimika.com.br" target="_blank" style="display: block;">
-                      <img src="https://i.imgur.com/F9ZABlg.png" width="600" height="207" border="0" alt="Botão de Chamada para Ação - Visite nosso site Kimika" style="display: block; max-width: 600px;" class="full-width-image">
+                      <img src="https://i.imgur.com/F9ZABlg.png" width="600" height="207" border="0" alt="Kimika" style="display: block; max-width: 600px;" class="full-width-image">
                     </a>
                   </td>
                 </tr>
