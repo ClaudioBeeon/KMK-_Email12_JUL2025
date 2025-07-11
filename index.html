@@ -16,32 +16,21 @@
     #outlook a { padding: 0; }
     .appleLinks a { color:#000000 !important; text-decoration: none; }
     
-    /* Técnica de sobreposição absoluta */
-    .text-container { position: relative; height: 52px; }
-    .white-text-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      color: #ffffff !important;
-      -webkit-text-fill-color: #ffffff !important;
-      mso-color-alt: #ffffff;
+    /* Estilo unificado para o texto branco */
+    .cupom-text {
       font-family: 'Montserrat', Arial, sans-serif !important;
       font-size: 18px !important;
       font-weight: 600 !important;
       line-height: 52px !important;
       text-align: center !important;
-    }
-    .text-fallback {
-      visibility: hidden;
-      font-size: 0;
-      height: 0;
-      overflow: hidden;
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      mso-color-alt: #ffffff;
+      display: block !important;
     }
 
     @media screen and (max-width: 480px) {
-      .white-text-overlay {
+      .cupom-text {
         color: #ffffff !important;
         -webkit-text-fill-color: #ffffff !important;
       }
@@ -67,7 +56,7 @@
                   </td>
                 </tr>
 
-                <!-- BLOCO DO CUPOM - SOLUÇÃO DEFINITIVA -->
+                <!-- BLOCO DO CUPOM - VERSÃO SIMPLIFICADA SEM DUPLICAÇÃO -->
                 <tr>
                   <td align="center" valign="middle" background="https://i.imgur.com/ptqSy7i.png" bgcolor="#ffffff" width="600" height="52" style="background-image: url('https://i.imgur.com/ptqSy7i.png'); background-size: cover; background-position: center; text-align: center;">
                     <!--[if gte mso 9]>
@@ -75,15 +64,8 @@
                       <v:fill type="frame" src="https://i.imgur.com/ptqSy7i.png" color="#ffffff" />
                       <v:textbox inset="0,0,0,0">
                     <![endif]-->
-                    <div class="text-container">
-                      <!-- Texto real (pode ficar invisível em alguns clientes) -->
-                      <div class="text-fallback">
-                        CUPOM: MEUANIVERSARIO
-                      </div>
-                      <!-- Overlay que força o texto branco -->
-                      <div class="white-text-overlay">
-                        CUPOM:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEUANIVERSARIO
-                      </div>
+                    <div class="cupom-text">
+                      CUPOM:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEUANIVERSARIO
                     </div>
                     <!--[if gte mso 9]>
                       </v:textbox>
