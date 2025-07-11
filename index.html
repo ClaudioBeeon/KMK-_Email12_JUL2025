@@ -18,26 +18,29 @@
     
     /* Container principal */
     .main-container {
-      position: relative;
       width: 600px;
       margin: 0 auto;
     }
     
-    /* Camada de fundo com as imagens (não clicável) */
-    .background-layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    /* Blocos de imagem como background */
+    .image-block {
+      background-size: cover;
+      background-position: center;
       pointer-events: none !important;
-      z-index: 1;
     }
     
-    /* Camada de conteúdo (clicável) */
-    .content-layer {
-      position: relative;
-      z-index: 2;
+    /* Bloco da imagem superior */
+    .top-image {
+      background-image: url('https://i.imgur.com/qlKYrXE.png');
+      height: 820px;
+      width: 600px;
+    }
+    
+    /* Bloco da imagem do meio */
+    .middle-image {
+      background-image: url('https://i.imgur.com/Qaf4y1H.png');
+      height: 80px;
+      width: 600px;
     }
     
     /* Estilo do cupom */
@@ -48,7 +51,6 @@
       width: 600px;
       height: 52px;
       text-align: center;
-      margin: 0 auto;
     }
     
     .cupom-text {
@@ -59,14 +61,30 @@
       color: #ffffff !important;
       -webkit-text-fill-color: #ffffff !important;
       mso-color-alt: #ffffff;
+      display: block !important;
       user-select: text !important;
       -webkit-user-select: text !important;
+    }
+    
+    /* Botão mantido como elemento interativo */
+    .button-container {
       pointer-events: auto !important;
     }
 
     @media screen and (max-width: 480px) {
-      .main-container, .cupom-block {
+      .main-container, 
+      .top-image, 
+      .middle-image, 
+      .cupom-block {
         width: 100% !important;
+      }
+      .top-image {
+        height: auto;
+        padding-top: 136.67%; /* Mantém proporção 600x820 */
+      }
+      .middle-image {
+        height: auto;
+        padding-top: 13.33%; /* Mantém proporção 600x80 */
       }
       .cupom-text {
         font-size: 16px !important;
@@ -76,39 +94,24 @@
 </head>
 <body bgcolor="#FFFFFF" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
   <div class="main-container">
-    <!-- Camada de fundo (imagens não interativas) -->
-    <div class="background-layer">
-      <img src="https://i.imgur.com/qlKYrXE.png" width="600" height="820" alt="" style="display: block; width: 100%; max-width: 600px; pointer-events: none !important;">
-      <img src="https://i.imgur.com/Qaf4y1H.png" width="600" height="80" alt="" style="display: block; width: 100%; max-width: 600px; pointer-events: none !important;">
+    <!-- Imagem superior como background -->
+    <div class="image-block top-image"></div>
+    
+    <!-- Imagem do meio como background -->
+    <div class="image-block middle-image"></div>
+    
+    <!-- Bloco do cupom -->
+    <div class="cupom-block">
+      <div class="cupom-text">
+        CUPOM:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEUANIVERSARIO
+      </div>
     </div>
     
-    <!-- Camada de conteúdo (interativa) -->
-    <div class="content-layer">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <!-- Espaço para a imagem superior (vazia, já está no background) -->
-        <tr><td height="820"></td></tr>
-        <tr><td height="80"></td></tr>
-        
-        <!-- Bloco do cupom -->
-        <tr>
-          <td>
-            <div class="cupom-block">
-              <div class="cupom-text">
-                CUPOM:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEUANIVERSARIO
-              </div>
-            </div>
-          </td>
-        </tr>
-        
-        <!-- Botão (mantido interativo) -->
-        <tr>
-          <td align="center" valign="top" style="font-size: 0; line-height: 0;">
-            <a href="http://kimika.com.br" target="_blank" style="display: block;">
-              <img src="https://i.imgur.com/F9ZABlg.png" width="600" height="207" border="0" alt="Kimika" style="display: block; max-width: 600px;">
-            </a>
-          </td>
-        </tr>
-      </table>
+    <!-- Botão (mantido como elemento interativo) -->
+    <div class="button-container">
+      <a href="http://kimika.com.br" target="_blank" style="display: block;">
+        <img src="https://i.imgur.com/F9ZABlg.png" width="600" height="207" border="0" alt="Kimika" style="display: block; max-width: 600px;">
+      </a>
     </div>
   </div>
 </body>
